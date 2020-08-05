@@ -1,0 +1,143 @@
+<!-- SAMPLEJS.HTM
+     This file is that part of the WebQ Javascript code where 
+     the definitions for a specific study are to be entered by 
+     the researcher. Must be loaded by appropriate frameset file
+     (samplewq.htm). The main code file required is webqcode.js
+//-->
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>Human Nature Relationship</TITLE>
+</HEAD>
+<script language="JavaScript">
+
+// Edit the following lines for your purposes
+
+//*** study_title will be displayed at the center of the top frame
+//  (may contain also short instruction. Use <br> for line break)
+study_title = 'Human Nature Relationship WebQ-Sort';
+
+//*** address that will accept results  
+//  (nobody@localhost is standard for copy to Trash on Mailserver)
+recipient = 'bollybosh@gmail.com';
+
+//*** email subject line:
+subject = 'Human Nature Relationship WebQ-Sort'; 
+
+//*** URL of the 'help page' and name of button for 'help page';
+help_url="webqhelp.htm";      
+help_button="Help";
+
+forcedchoice = true ; //set 'false' to permit sending sorts that
+                      //do not match the prescribed response distribution
+                      //(usually set 'true')
+
+randomsort = true;  //set 'false' if statements are to be ordered
+                    //in original sequence (usually set 'true')
+
+//*** Name of the extremist categories:
+rightanchor = 'Most agree';
+leftanchor = 'Least agree';
+
+//*** No. of statements:
+numstatements = 56;
+
+//*** No. of categories:
+categories = 5;
+
+cat = new Array(categories); //don't change this line!!
+
+//*** Distribution of the categories. If you have more categories add it.
+//    (and adjust the 'categories=' above)
+cat[1] = 9;
+cat[2] = 12;
+cat[3] = 14;
+cat[4] = 12;
+cat[5] = 9;
+
+//*** Your statements. You can adjust it to the no. of your statements.
+statement = new Array(numstatements); //don't change this line
+statement[1] =  "The good life is not the consumer life: Opportunities for creativity and meaningful work, time for family and friends, green spaces in cities, and wilderness for other creatures, are more important elements.";
+statement[2] =  "I especially feel transformed, with a sense of belonging in old forest groves.";
+statement[3] =  "I often feel confused or strange, or sad, when in a forest grove.";
+statement[4] =  "Even when I see tiles and stones shattered and crushed, I cannot help a feeling of regret; when I see plants broken and destroyed, I cannot help a feeling of pity.";
+statement[5] =  "I feel easily connected with ancestors in old forest groves.";
+statement[6] =  "Forests are especially valuable for their beauty.";
+statement[7] =  "The lessons nature teaches me lead to a deep sense of calm.";
+statement[8] =  "All creatures are here for reasons other than serving human beings, and each has a moral right to space and freedom.";
+statement[9] =  "Mountains have a right to to exist in beauty without being transfigured by mining for raw materials.";
+statement[10] =  "In the free-market each individual acts to maximise his or her own interest, and by so doing benefits fully exploits natural resources. This creates the greatest possible benefit to us all.";
+statement[11] =  "Religious lifestyles that aim to transcend nature create carelessness about our environment.";
+statement[12] =  "I understand that what is regarded as sacred is more likely to be treated with care and respect.";
+statement[13] =  "If we create sacred areas, then increased damage to the non-sacred areas would occur.";
+statement[14] =  "When transcendent heaven is not the central goal of human life, then forceful claims by humans for dominating nature become evident.";
+statement[15] =  "Human superiority lies in technological progress and sustained economic growth.";
+statement[16] =  "Plants respond to human communication.";
+statement[17] =  "Forests contain NEITHER nasty NOR helpful spirits.";
+statement[18] =  "Cultural diversity and biological diversity are hardly related.";
+statement[19] =  "All things in nature are interconnected and depend upon each other for life.";
+statement[20] =  "Life force is in a breathing animal, growing plant AND inorganic matter.";
+statement[21] =  "To knowingly destroy rain forest, or any other unique feature of the natural world, restricts our ability to contemplate and communicate with nature.";
+statement[22] =  "Where rituals have been enacted for many years great reservoirs of power are built up.";
+statement[23] =  "The Universe, I regard as my body and, that which directs the universe I consider as my nature.";
+statement[24] =  "From the water we drink, to the air we inhale, to  the elements themselves, all can feel us.";
+statement[25] =  "The Creative life-force and Earth are my parents, and even a small creature like myself finds an intimate place in their midst.";
+statement[26] =  "Natural or Cosmic law is never violated as things run their customary course.";
+statement[27] =  "Nature is so neatly integrated, that if good is done within it, good will return; if harm is done within it, we hurt ourselves.";
+statement[28] =  "Legends which say a place has a guardian spirit or muse usually contain some truth.";
+statement[29] =  "Because the costs of reducing greenhouse gas emissions outweigh the benefits to the economy, climate-change programs are not justified.";
+statement[30] =  "Most of us enjoy the consumer lifestyle, but we need to overcome our addiction to it because it is damaging ourselves and the environment.";
+statement[31] =  "An environmental policy based on loss and profit accounting procedures should work.";
+statement[32] =  "People these days generally possess no more than they need.";
+statement[33] =  "Solutions to environmental problems are found with a commitment to social justice.";
+statement[34] =  "An environmental crisis requires personal self-cultivation, and change in personal values.";
+statement[35] =  "With each culture or nation keeping its own world view and rule, eventually sustainable lifestyles and on earth will come about.";
+statement[36] =  "Rituals, like thanksgiving, can help the land to flourish and enhance our intimacy with nature.";
+statement[37] =  "Human greed leads to division and ownership of the land, and this in turn promotes violent conflict, destruction of nature, and chaos.";
+statement[38] =  "The unique position of humankind amongst creatures lies in the fact that humankind are accountable for its actions.";
+statement[39] =  "The advantage of humankind lies in its ability to deal with nature, more than any other creature.";
+statement[40] =  "Science and the Scientific/Legal fraternity will be able to reconcile our economy and the natural environment: We can solve any ecological problem.";
+statement[41] =  "Recent developments in technology enable us to better manage natural resources.";
+statement[42] =  "Scientific ecological knowledge, and the law, can  deal adequately now with complex ecosystems, regardless of societies' culture.";
+statement[43] =  "Science gives the only comprehensive, and realistic story of the natural world.";
+statement[44] =  "While a man was riding a bull, it turned toward him and said: 'I have not been created for this purpose (of riding)' I have been created for plowing.";
+statement[45] =  "I do not believe that scientific theory explains the universe or our environment; it is one more story like the rest.";
+statement[46] =  "Our ecosystem includes the sacred source of life as well as such things as the light of the Sun and the Earth.";
+statement[47] =  "I would allow the transformation of a sacred landscape for the sake of sustainable developments or, need.";
+statement[48] =  "Local residents protest against a TV transmitting mast on Tory Hill, Waterford in Ireland because the site is sacred: This protest is foolish.";
+statement[49] =  "Nature is a genuine source of understanding  for transcendental life, and so cannot be considered secondary to human whims.";
+statement[50] =  "A model cardboard church cannot be a sacred site.";
+statement[51] =  "land use practices cannot be made sacred.";
+statement[52] =  "Cosmologists create a world of meaning from raw data.";
+statement[53] =  "To better understand the cosmos we require an understanding of higher mathematics, electron microscopes and telescopes that penetrate deep into distant galaxies.";
+statement[54] =  "Plant and animal life are like Natures frescoes, both beautifying and exemplifying the transcendental, Natural Law.";
+statement[55] =  "Plants signify birth, death AND rebirth.";
+statement[56] =  "Nature in all its forms cannot explain its own being; nature stands as a sign of something beyond itself.";
+
+//*** No. of post-sort questions:
+numpostq = 3; 
+postq = new Array(numpostq); //don't change this line!!
+postansw = new Array(numpostq); //don't change this line!!
+
+//*** Your post-sort questions:
+postq[1] = "Which country and region do you belong to, or come from?";
+postq[2] = "What is your age?";
+postq[3] = "	Please feel free to add your comments about the exercise.";
+//*** Additional (hidden) form elements 
+// The string variable morehidden will be pasted between the <form> and
+// </form> tags of the final form that will be sent away. 
+morehidden= " ";
+
+//study definitions part ends here (do not delete next line)
+</script>   
+
+<!--Main WebQ code is included from src "webqcode.js"
+   In case you put this application on a webserver that doesn't support
+   the js MIME-type (which is required for Netscape 3.0 only, however) 
+   you should insert the content of the file webqcode.js directly
+   after the '//study def. part ends here ...' line, and delete
+   the two lines following next with script and end-script tags -->
+
+<script language="JavaScript" src="webqcode.js" type="text/javascript">
+</script>
+</html>  

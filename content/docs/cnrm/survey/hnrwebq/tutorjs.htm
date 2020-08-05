@@ -1,0 +1,88 @@
+<!-- TUTORJS.HTM
+     This file is that part of the WebQ Javascript code where 
+     the definitions for a specific study are to be entered by 
+     the researcher. Must be loaded by appropriate frameset file
+     (tutorwq.htm). The main code file required is webqcode.js
+//-->
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>Sample WebQ Application</TITLE>
+</HEAD>
+<script language="JavaScript"> 
+
+// Edit the following lines for your purposes
+//*** URL of the help page;
+//help_url="tutorhlp.htm";
+
+help_button="Back";
+help_url="javascript:if(opener){opener.focus();self.close()}else history.back(2)";
+
+
+forcedchoice = false ; //set 'false' to permit sending sorts that
+                      //do not match the prescribed response distribution
+                      //(usually set 'true')
+
+randomsort = false;  //set 'false' if statements are to be ordered
+                    //in original sequence (usually set 'true')
+
+recipient = '';     //address is empty here (Tutor example!)
+                    //if there is no recipient the Submit-button will be suppressed!
+subject = 'Q-Sort data for Sample WebQ'; //email subject line 
+
+//*** Name of the extremist categories:
+leftanchor = 'Least of ... (whatever)';
+rightanchor = 'Most of ... (whatever)';
+
+//*** will be displayed at the center of the top frame:
+study_title = 'WebQ-Sort Tutorial - Mark statements as indicated<br>Click <b>Update</b> as often as you wish ...'
+
+//*** No. of statements:
+numstatements = 9;
+
+//*** No. of categories:
+categories = 5;
+cat = new Array(categories); //don't change this line
+
+//*** Distribution of the categories. If you have more categories add it.
+//    (and adjust the 'categories=' above
+cat[1] = 1;
+cat[2] = 2;
+cat[3] = 3;
+cat[4] = 2;
+cat[5] = 1;
+
+//*** Your statements. You can adjust it to the no. of your statements.
+statement = new Array(numstatements); //don't change this line
+statement[1] =  "Mark me <b><b>+2</b></b> and click <b>UPDATE</b>";
+statement[2] =  "Leave me at 'don't know': <b>0</b>";
+statement[3] =  "Give me a positive mark: <b>+1</b>";
+statement[4] =  "Move me down to: <b>-1</b>";
+statement[5] =  "Move me up to: <b>+1</b>";
+statement[6] =  "Put me to the lowest rank!";
+statement[7] =  "Another 'neither/nor': <b>0</b> ";
+statement[8] =  "No opinion to that";
+statement[9] =  "Where is my empty 'slot'?";
+
+//*** No. of post-sort questions:
+numpostq = 2; 
+postq = new Array(numpostq); //don't change this line!!
+postansw = new Array(numpostq); //don't change this line!!
+
+//*** Your post-sort questions:
+postq[1] = "Please tell me how you like the WebQ Tutorial";
+postq[2] = "Did you experience any difficulties?";
+
+//study definitions part ends here (do not delete next line)
+</script>   
+
+<!--Main WebQ code is included from src "webqcode.js"
+   In case you put this application on a webserver that doesn't support
+   the js MIME-type (which is required for Netscape 3.0 only) 
+   you should insert the content of the file webqcode.js directly
+   after the '//study def. part ends here ...' line, and delete
+   the two lines following next with script and end-script tags -->
+
+<script language="JavaScript" src="webqcode.js" type="text/javascript">
+</script>
+</html>  
